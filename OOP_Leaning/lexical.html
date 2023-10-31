@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lexical Scoping</title>
+</head>
+<body >
+    <button id="green">Green</button>
+    <button id="orange">Orange</button>
+    <button id="blue">Blue</button>
+    <button id="yellow">Yellow</button>
+    <button id="aqua">Aqua</button>
+    <button id="red">Red</button>
+</body>
+<script>
+    // document.getElementById('green').onclick = function (){
+    //    document.body.style.backgroundColor = 'orange'
+    // }
+    // document.getElementById('green').onclick = function (){
+    //     document.body.style.backgroundColor = 'green'
+    // }
+    // document.getElementById('Blue').onclick = function (){
+    //     document.body.style.backgroundColor = 'blue'
+    // }
+    // document.getElementById('Aqua').onclick = function (){
+    //     document.body.style.backgroundColor = 'aqua'
+    // }
+    // document.getElementById('Yellow').onclick = function (){
+    //     document.body,style.backgroundColor = 'yellow'
+    // }
+    //  document.getElementById('orange').onclick = function (){
+    //  }
+
+    function clickHandler (color){
+        // document.body.style.backgroundColor = `${color}`
+      return  function (){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('green').onclick = clickHandler('green')
+    document.getElementById('blue').onclick = clickHandler('blue')
+    document.getElementById('yellow').onclick = clickHandler('yellow')
+    document.getElementById('aqua').onclick = clickHandler('aqua')
+    document.getElementById('red').onclick = clickHandler('red')
+
+</script>
+</html>
